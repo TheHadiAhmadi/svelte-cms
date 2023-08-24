@@ -2,10 +2,11 @@
     import Dynamic from './Dynamic.svelte'
 
     export let data;
-
-    console.log('dat: ', data)
     
+
+    console.log(data)
 </script>
+
 <Dynamic item={data.page} components={data.components}/>
 
 

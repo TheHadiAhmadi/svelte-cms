@@ -1,6 +1,9 @@
 <script>
     export let item
     export let components;
+
+
+    console.log(item)
 </script>
 
 

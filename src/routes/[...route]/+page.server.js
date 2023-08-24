@@ -1,28 +1,145 @@
-export function load() {
-  const page = {
-    slot: [
+export function load({ params }) {
+  const route = params.route;
+
+  const pages = {
+    test: [
       {
         type: "button/Button",
         props: {
           color: "primary",
         },
-        slot: ["Primary YeSvelte Button"],
+        slot: ["This is Test Page"],
       },
+    ],
+    users: [
       {
         type: "el/El",
         props: {
-          textColor: "primary",
+          color: "primary",
         },
-        slot: ["Content Inside EL"],
+        slot: [
+          "This is Users page",
+          {
+            type: "el/El",
+            props: {
+              p: "4",
+              bgColor: "success",
+              bgOpacity: "10",
+            },
+            slot: [
+              {
+                type: "el/El",
+                props: {
+                  tag: "a",
+                  href: "/users/1",
+                },
+                slot: ["User 1"],
+              },
+              {
+                type: "el/El",
+                props: {
+                  tag: "a",
+                  href: "/users/2",
+                },
+                slot: ["User 2"],
+              },
+            ],
+          },
+        ],
       },
+    ],
+    "users/1": [
       {
-        type: "input/Input",
+        type: "el/El",
         props: {
-          value: "Initial Value",
+          p: "md",
         },
+        slot: [
+          "This is User 1 page",
+          {
+            type: "el/El",
+            props: {
+              p: "4",
+              bgColor: "orange",
+              bgOpacity: "10",
+            },
+            slot: [
+              {
+                type: "el/El",
+                props: {
+                  tag: "a",
+                  href: "/users",
+                },
+                slot: ["Back"],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    "users/2": [
+      {
+        type: "el/El",
+        props: {
+          p: "md",
+        },
+        slot: [
+          "This is User 2 page",
+          {
+            type: "el/El",
+            props: {
+              p: "4",
+              bgColor: "azure",
+              bgOpacity: "10",
+            },
+            slot: [
+              {
+                type: "el/El",
+                props: {
+                  tag: "a",
+                  href: "/users",
+                },
+                slot: ["Back"],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    about: [
+      {
+        type: "badge/Badge",
+        props: {
+          color: "info",
+          ghost: true,
+        },
+        slot: ["This is about page"],
       },
     ],
   };
+
+  // slot: [
+  //   {
+  //     type: "button/Button",
+  //     props: {
+  //       color: "primary",
+  //     },
+  //     slot: ["Primary YeSvelte Button"],
+  //   },
+  //   {
+  //     type: "el/El",
+  //     props: {
+  //       textColor: "primary",
+  //     },
+  //     slot: ["Content Inside EL"],
+  //   },
+  //   {
+  //     type: "input/Input",
+  //     props: {
+  //       value: "Initial Value",
+  //     },
+  //   },
+  // ],
   //   const page = {
   //     slot: [
   //       {
@@ -133,6 +250,8 @@ export function load() {
   //   };
 
   return {
-    page,
+    page: {
+      slot: pages[route],
+    }
   };
 }
