@@ -15,5 +15,6 @@
     <a href="/users/1">User 1</a>
     <a href="/users/2">User 2</a>
 </nav>
-
-<slot/>
+{#key $page.url.pathname}
+    <slot/>
+{/key}
