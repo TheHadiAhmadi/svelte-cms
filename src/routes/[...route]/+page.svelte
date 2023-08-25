@@ -51,7 +51,7 @@
       .width}px; height: {positions[positions.length - 1]
       .height}px; pointer-events: none"
   >
-    <El
+    <!-- <El
       d="inline-flex"
       p="1"
       alignItems="center"
@@ -64,7 +64,7 @@
       m="1"
     >
       <Icon size="md" name="pencil" />
-    </El>
+    </El> -->
   </El>
 {/if}
 
