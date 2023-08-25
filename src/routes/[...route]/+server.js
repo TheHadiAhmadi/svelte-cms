@@ -3,8 +3,6 @@ import {existsSync} from 'fs'
 
 export async function POST(event) {
 
-    console.log("POST", event)
-
     const body = await event.request.json()
 
     const page = body.page.slot;
