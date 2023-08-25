@@ -11,13 +11,13 @@ export async function POST(event) {
     const route = event.params.route;
 
 
-    const pagesFile = await readFile('./pages.json', 'utf-8')
+    const pagesFile = await readFile('./data/pages.json', 'utf-8')
 
     const pages = JSON.parse(pagesFile);
 
     pages[route] = page;
   
-    await writeFile('./pages.json', JSON.stringify(pages))
+    await writeFile('./data/pages.json', JSON.stringify(pages))
 
     
     return new Response(JSON.stringify({page}))

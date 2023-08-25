@@ -6,10 +6,10 @@ export async function load({ params, edit }) {
   const route = params.route;
 
   // if(edit)
-  if(!existsSync('./pages.json')) {
-    await writeFile('./pages.json', '{}')
+  if(!existsSync('./data/pages.json')) {
+    await writeFile('./data/pages.json', '{}')
   }
-  const pagesFile = await readFile('./pages.json', 'utf-8')
+  const pagesFile = await readFile('./data/pages.json', 'utf-8')
 
   const pages = JSON.parse(pagesFile);
 
