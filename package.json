@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@ulibs/ui": "^0.0.2-next.1",
 		"yesvelte": "^0.0.2-next.209"
 	}
 }
