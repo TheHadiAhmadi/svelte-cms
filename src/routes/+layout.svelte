@@ -15,6 +15,7 @@
     <a href="/test">Test</a>
 
     <a href="/about">About</a>
+    <a href="/grid">Grid System</a>
     <a href="/users">UserList</a>
     <a href="/users/1">User 1</a>
     <a href="/users/2">User 2</a>
